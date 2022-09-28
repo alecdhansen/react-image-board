@@ -8,7 +8,9 @@ function Navigationbar() {
       <Container className="container">
         <Navbar.Brand className="top-header" href="#">
           {" "}
-          <Button variant="primary">Add Image</Button>
+          <Button variant="primary" className="head-button">
+            Add Image
+          </Button>
           <p className="title">Sports Image Collection Board</p>
         </Navbar.Brand>
       </Container>
