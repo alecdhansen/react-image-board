@@ -28,8 +28,7 @@ body {
 }
 .buttons {
   display: flex;
-  justify-content: center;
-  position: fixed;
+  justify-content: flex-start;
 }
 .btn {
   margin: 0px 10px;
