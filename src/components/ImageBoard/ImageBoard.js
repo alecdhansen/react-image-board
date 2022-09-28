@@ -1,10 +1,9 @@
 import ImageForm from "../ImageForm/ImageForm";
 import ImageList from "../ImageList/ImageList";
-import "./ImageBoard.css";
 
 function ImageBoard() {
   return (
-    <div>
+    <div className="img-board">
       <ImageForm />
       <ImageList />
     </div>
