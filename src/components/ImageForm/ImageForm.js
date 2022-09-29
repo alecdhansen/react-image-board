@@ -4,23 +4,28 @@ import InputGroup from "react-bootstrap/InputGroup";
 import { useState } from "react";
 import Toast from "react-bootstrap/Toast";
 
+const INITIAL_STATE = {
+  url: "",
+  caption: "",
+};
+
 function ImageForm({ addImage }) {
-  const [source, setSource] = useState("");
+  const [url, setUrl] = useState("");
   const [caption, setCaption] = useState("");
   const [show, setShow] = useState(false);
+  const [state, setState] = useState(INITIAL_STATE);
   const handleSubmit = (e) => {
     e.preventDefault();
     const newImage = {
-      source,
+      url,
       caption,
     };
     addImage(newImage);
-    setSource("");
-    setCaption("");
+    setState(INITIAL_STATE);
   };
 
   function clearInputs() {
-    return setSource(""), setCaption("");
+    return setUrl(""), setCaption("");
   }
 
   return (
@@ -33,8 +38,8 @@ function ImageForm({ addImage }) {
           type="url"
           pattern="https://.*"
           placeholder="Add favorite sports image..."
-          value={source}
-          onChange={(e) => setSource(e.target.value)}
+          value={url}
+          onChange={(e) => setUrl(e.target.value)}
           required
         />
       </InputGroup>
@@ -48,6 +53,7 @@ function ImageForm({ addImage }) {
           placeholder="Brief description..."
           value={caption}
           onChange={(e) => setCaption(e.target.value)}
+          type="text"
           required
         />
       </InputGroup>
